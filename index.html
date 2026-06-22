@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DRANICWORLD | это тебе токая памитка с правилами</title>
+    <title>DRANICWORLD | Памятка Игрока</title>
     <style>
         body {
             background-color: #0f0f13;
@@ -23,15 +23,15 @@
             border: 1px solid #232330;
         }
         h1 {
-            color: #ff9800;
+            color: #4caf50;
             font-size: 2.8em;
             margin: 0 0 10px 0;
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-shadow: 0 0 15px rgba(255, 152, 0, 0.3);
+            text-shadow: 0 0 15px rgba(76, 175, 80, 0.3);
         }
         h2 {
-            color: #ff9800;
+            color: #4caf50;
             font-size: 1.8em;
             margin-top: 35px;
             margin-bottom: 15px;
@@ -58,7 +58,7 @@
             padding: 18px;
             border-radius: 10px;
             margin: 25px 0 5px 0;
-            border: 2px dashed #ff9800;
+            border: 2px dashed #4caf50;
             font-size: 22px;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -77,7 +77,6 @@
             margin-bottom: 25px;
         }
         
-        /* Заметки для новичков */
         .info-cards {
             text-align: left;
             margin-top: 20px;
@@ -87,16 +86,15 @@
             padding: 15px 20px;
             border-radius: 8px;
             margin-bottom: 12px;
-            border-left: 4px solid #ff9800;
+            border-left: 4px solid #4caf50;
         }
         .card strong {
-            color: #ff9800;
+            color: #4caf50;
             display: block;
             margin-bottom: 5px;
             font-size: 1.1em;
         }
 
-        /* Таблица правил */
         .rules-table {
             width: 100%;
             border-collapse: collapse;
@@ -112,7 +110,7 @@
         }
         .rules-table th {
             background-color: #232330;
-            color: #ff9800;
+            color: #4caf50;
             font-weight: bold;
             text-transform: uppercase;
             font-size: 0.9em;
@@ -129,7 +127,6 @@
             font-weight: bold;
         }
 
-        /* Кнопка Поделиться */
         .share-btn {
             background: #232330;
             color: #a0a0b0;
@@ -146,14 +143,13 @@
             color: #ffffff;
         }
 
-        /* Всплывашка уведомлений */
         .tooltip {
             display: none;
             position: absolute;
             top: -35px;
             left: 50%;
             transform: translateX(-50%);
-            background: #ff9800;
+            background: #4caf50;
             color: white;
             padding: 6px 12px;
             border-radius: 5px;
@@ -168,7 +164,7 @@
 
     <div class="container">
         <h1>DRANICWORLD</h1>
-        <p>Памятка игрока сервера Анархии</p>
+        <p>Памятка игрока нашего сервера</p>
         <div class="version">Версия: <strong>1.21.11</strong></div>
         
         <!-- IP сервера -->
@@ -178,64 +174,63 @@
         </div>
         <p class="hint">Нажми на поле выше, чтобы скопировать IP</p>
 
-        <!-- Короткая памятка -->
+        <!-- Карточки инфы -->
         <h2>Важно знать при заходе:</h2>
         <div class="info-cards">
             <div class="card">
-                <strong>🛡 Тут нет приватов</strong>
-                <p>Команд /claim или /регион не существует. Твою базу могут найти и разграбить в любой момент. Спрячь её как можно дальше от спавна!</p>
+                <strong>🔒 Защита построек</strong>
+                <p>На сервере работают приваты! Обязательно запривать свой дом, чтобы другие игроки не смогли сломать твои постройки и забрать ресурсы.</p>
             </div>
             <div class="card">
-                <strong>⚔ Доверяй с осторожностью</strong>
-                <p>Любой игрок может заманить тебя в ловушку, убить и забрать твои ресурсы. Будь всегда начеку.</p>
+                <strong>⚔ Анархия, но с границами</strong>
+                <p>PvP и сражения разрешены, но ломать чужие заприваченные дома запрещено. Строй надёжную базу и развивайся!</p>
             </div>
         </div>
 
         <hr style="border: 0; border-top: 1px solid #232330; margin: 35px 0;">
 
-        <!-- Таблица правил -->
+        <!-- Свод законов -->
         <h2>Свод законов мира</h2>
         <table class="rules-table">
             <thead>
                 <tr>
-                    <th>Что делаем?</th>
+                    <th>Правило</th>
                     <th>Описание</th>
-                    <th>Статус</th>
+                    <th>Наказание</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>Гриф и PvP</strong></td>
-                    <td>Взрывать дома, воровать ресурсы, убивать игроков.</td>
-                    <td class="allowed">РАЗРЕШЕНО</td>
+                    <td><strong>1. Гриферство</strong></td>
+                    <td>Обход приватов, разрушение чужих построек и заливание лавой.</td>
+                    <td class="punishment">БАН ОТ 7 ДНЕЙ</td>
                 </tr>
                 <tr>
-                    <td><strong>Читы / Софт</strong></td>
+                    <td><strong>2. Читы / Софт</strong></td>
                     <td>Использование Киллауры, Иксрея, Флая и т.д.</td>
                     <td class="punishment">БАН НАВСЕГДА</td>
                 </tr>
                 <tr>
-                    <td><strong>Дюпы и Баги</strong></td>
-                    <td>Клонирование предметов, ломание экономики.</td>
+                    <td><strong>3. Дюпы и Баги</strong></td>
+                    <td>Клонирование предметов, ломание экономики сервера.</td>
                     <td class="punishment">БАН И СБРОС</td>
                 </tr>
                 <tr>
-                    <td><strong>Лаг-машины</strong></td>
-                    <td>Постройка механизмов для краша или лагов сервера.</td>
-                    <td class="punishment">БАН ПО IP</td>
+                    <td><strong>4. Чат</strong></td>
+                    <td>Реклама сторонних проектов, спам и жесткие оскорбления.</td>
+                    <td class="punishment">МУТ ОТ 30 МИН</td>
                 </tr>
             </tbody>
         </table>
 
-        <!-- Кнопка скопировать ссылку на сайт -->
+        <!-- Кнопка Поделиться -->
         <div style="position: relative; display: inline-block;">
             <div class="tooltip" id="linkTooltip" style="top: -40px;">Ссылка скопирована!</div>
-            <button class="share-btn" onclick="copyLink('linkTooltip')">🔗 Скопировать ссылку на эту памятку</button>
+            <button class="share-btn" onclick="copyLink('linkTooltip')">🔗 Скопировать ссылку на памятку</button>
         </div>
     </div>
 
     <script>
-        // Универсальная функция копирования текста
         function copyText(text, tooltipId) {
             const tooltip = document.getElementById(tooltipId);
             navigator.clipboard.writeText(text).then(() => {
@@ -244,7 +239,6 @@
             });
         }
 
-        // Функция копирования ссылки на текущую страницу
         function copyLink(tooltipId) {
             const tooltip = document.getElementById(tooltipId);
             navigator.clipboard.writeText(window.location.href).then(() => {
