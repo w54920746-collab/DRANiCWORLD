@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DRANICWORLD | Minecraft Server</title>
+    <title>DRANICWORLD | это тебе токая памитка с правилами</title>
     <style>
         body {
             background-color: #0f0f13;
@@ -33,15 +33,16 @@
         h2 {
             color: #ff9800;
             font-size: 1.8em;
-            margin-top: 40px;
-            margin-bottom: 20px;
+            margin-top: 35px;
+            margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
         p {
             color: #a0a0b0;
-            font-size: 1.2em;
+            font-size: 1.1em;
             margin: 5px 0;
+            line-height: 1.5;
         }
         .version {
             color: #e0e0e0;
@@ -56,7 +57,7 @@
             background: #1f202c;
             padding: 18px;
             border-radius: 10px;
-            margin: 30px 0 5px 0;
+            margin: 25px 0 5px 0;
             border: 2px dashed #ff9800;
             font-size: 22px;
             cursor: pointer;
@@ -70,27 +71,32 @@
             transform: scale(1.02);
         }
         .hint {
-            font-size: 0.8em;
+            font-size: 0.85em;
             color: #6c6d7e;
             margin-top: 0;
-            margin-bottom: 30px;
-        }
-        .tooltip {
-            display: none;
-            position: absolute;
-            top: -35px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #ff9800;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 5px;
-            font-size: 14px;
-            font-weight: bold;
-            box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+            margin-bottom: 25px;
         }
         
-        /* Стили для таблицы правил анархии */
+        /* Заметки для новичков */
+        .info-cards {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .card {
+            background: #1f202c;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            border-left: 4px solid #ff9800;
+        }
+        .card strong {
+            color: #ff9800;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+
+        /* Таблица правил */
         .rules-table {
             width: 100%;
             border-collapse: collapse;
@@ -110,7 +116,6 @@
             font-weight: bold;
             text-transform: uppercase;
             font-size: 0.9em;
-            letter-spacing: 0.5px;
         }
         .rules-table tr:last-child td {
             border-bottom: none;
@@ -123,28 +128,73 @@
             color: #4caf50;
             font-weight: bold;
         }
+
+        /* Кнопка Поделиться */
+        .share-btn {
+            background: #232330;
+            color: #a0a0b0;
+            border: 1px solid #333344;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: all 0.2s;
+        }
+        .share-btn:hover {
+            background: #2d2d3d;
+            color: #ffffff;
+        }
+
+        /* Всплывашка уведомлений */
+        .tooltip {
+            display: none;
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ff9800;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+            z-index: 10;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <h1>DRANICWORLD</h1>
-        <p>Добро пожаловать на сервер Анархии!</p>
+        <p>Памятка игрока сервера Анархии</p>
         <div class="version">Версия: <strong>1.21.11</strong></div>
         
-        <!-- Поле с IP -->
-        <div class="ip-box" id="ipBox" onclick="copyIP()">
-            <div class="tooltip" id="tooltip">IP Скопирован!</div>
-            <strong id="ipText">144.124.196.94:25565</strong>
+        <!-- IP сервера -->
+        <div class="ip-box" id="ipBox" onclick="copyText('144.124.196.94:25565', 'ipTooltip')">
+            <div class="tooltip" id="ipTooltip">IP Скопирован!</div>
+            <strong>144.124.196.94:25565</strong>
         </div>
-        <p class="hint">Нажми на поле, чтобы скопировать IP-адрес</p>
+        <p class="hint">Нажми на поле выше, чтобы скопировать IP</p>
 
-        <hr style="border: 0; border-top: 1px solid #232330; margin: 40px 0;">
+        <!-- Короткая памятка -->
+        <h2>Важно знать при заходе:</h2>
+        <div class="info-cards">
+            <div class="card">
+                <strong>🛡 Тут нет приватов</strong>
+                <p>Команд /claim или /регион не существует. Твою базу могут найти и разграбить в любой момент. Спрячь её как можно дальше от спавна!</p>
+            </div>
+            <div class="card">
+                <strong>⚔ Доверяй с осторожностью</strong>
+                <p>Любой игрок может заманить тебя в ловушку, убить и забрать твои ресурсы. Будь всегда начеку.</p>
+            </div>
+        </div>
 
-        <!-- Раздел с правилами Анархии -->
-        <h2>Правила Анархии</h2>
-        <p style="font-size: 1em; margin-bottom: 20px;">Здесь выживает сильнейший. Помни основные законы мира:</p>
-        
+        <hr style="border: 0; border-top: 1px solid #232330; margin: 35px 0;">
+
+        <!-- Таблица правил -->
+        <h2>Свод законов мира</h2>
         <table class="rules-table">
             <thead>
                 <tr>
@@ -155,41 +205,51 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>Гриферство и PvP</strong></td>
-                    <td>Взрывать базы, грабить сундуки, убивать игроков и забирать их ресурсы.</td>
+                    <td><strong>Гриф и PvP</strong></td>
+                    <td>Взрывать дома, воровать ресурсы, убивать игроков.</td>
                     <td class="allowed">РАЗРЕШЕНО</td>
                 </tr>
                 <tr>
-                    <td><strong>Читы и Софт</strong></td>
-                    <td>Использование Киллауры, Флая, Иксрея и других сторонних чит-клиентов.</td>
+                    <td><strong>Читы / Софт</strong></td>
+                    <td>Использование Киллауры, Иксрея, Флая и т.д.</td>
                     <td class="punishment">БАН НАВСЕГДА</td>
                 </tr>
                 <tr>
                     <td><strong>Дюпы и Баги</strong></td>
-                    <td>Использование багов сервера для клонирования предметов или краша экономики.</td>
-                    <td class="punishment">БАН / ОБНУЛЕНИЕ</td>
+                    <td>Клонирование предметов, ломание экономики.</td>
+                    <td class="punishment">БАН И СБРОС</td>
                 </tr>
                 <tr>
-                    <td><strong>Атаки на сервер</strong></td>
-                    <td>Постройка лаг-машин, попытки положить сервер или вызвать жесткие лаги.</td>
+                    <td><strong>Лаг-машины</strong></td>
+                    <td>Постройка механизмов для краша или лагов сервера.</td>
                     <td class="punishment">БАН ПО IP</td>
                 </tr>
             </tbody>
         </table>
+
+        <!-- Кнопка скопировать ссылку на сайт -->
+        <div style="position: relative; display: inline-block;">
+            <div class="tooltip" id="linkTooltip" style="top: -40px;">Ссылка скопирована!</div>
+            <button class="share-btn" onclick="copyLink('linkTooltip')">🔗 Скопировать ссылку на эту памятку</button>
+        </div>
     </div>
 
     <script>
-        function copyIP() {
-            const ipText = document.getElementById('ipText').innerText;
-            const tooltip = document.getElementById('tooltip');
-            
-            navigator.clipboard.writeText(ipText).then(() => {
+        // Универсальная функция копирования текста
+        function copyText(text, tooltipId) {
+            const tooltip = document.getElementById(tooltipId);
+            navigator.clipboard.writeText(text).then(() => {
                 tooltip.style.display = 'block';
-                setTimeout(() => {
-                    tooltip.style.display = 'none';
-                }, 2000);
-            }).catch(err => {
-                console.error('Не удалось скопировать: ', err);
+                setTimeout(() => { tooltip.style.display = 'none'; }, 2000);
+            });
+        }
+
+        // Функция копирования ссылки на текущую страницу
+        function copyLink(tooltipId) {
+            const tooltip = document.getElementById(tooltipId);
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                tooltip.style.display = 'block';
+                setTimeout(() => { tooltip.style.display = 'none'; }, 2000);
             });
         }
     </script>
