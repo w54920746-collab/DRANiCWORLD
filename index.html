@@ -23,15 +23,15 @@
             border: 1px solid #232330;
         }
         h1 {
-            color: #4caf50;
+            color: #ff9800;
             font-size: 2.8em;
             margin: 0 0 10px 0;
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-shadow: 0 0 15px rgba(76, 175, 80, 0.3);
+            text-shadow: 0 0 15px rgba(255, 152, 0, 0.3);
         }
         h2 {
-            color: #4caf50;
+            color: #ff9800;
             font-size: 1.8em;
             margin-top: 40px;
             margin-bottom: 20px;
@@ -57,7 +57,7 @@
             padding: 18px;
             border-radius: 10px;
             margin: 30px 0 5px 0;
-            border: 2px dashed #4caf50;
+            border: 2px dashed #ff9800;
             font-size: 22px;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -81,7 +81,7 @@
             top: -35px;
             left: 50%;
             transform: translateX(-50%);
-            background: #4caf50;
+            background: #ff9800;
             color: white;
             padding: 6px 12px;
             border-radius: 5px;
@@ -90,7 +90,7 @@
             box-shadow: 0 5px 10px rgba(0,0,0,0.3);
         }
         
-        /* Стили для таблицы правил */
+        /* Стили для таблицы правил анархии */
         .rules-table {
             width: 100%;
             border-collapse: collapse;
@@ -106,7 +106,7 @@
         }
         .rules-table th {
             background-color: #232330;
-            color: #4caf50;
+            color: #ff9800;
             font-weight: bold;
             text-transform: uppercase;
             font-size: 0.9em;
@@ -119,13 +119,17 @@
             color: #f44336;
             font-weight: bold;
         }
+        .allowed {
+            color: #4caf50;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <h1>DRANICWORLD</h1>
-        <p>Добро пожаловать на наш сервер Minecraft!</p>
+        <p>Добро пожаловать на сервер Анархии!</p>
         <div class="version">Версия: <strong>1.21.11</strong></div>
         
         <!-- Поле с IP -->
@@ -137,38 +141,38 @@
 
         <hr style="border: 0; border-top: 1px solid #232330; margin: 40px 0;">
 
-        <!-- Раздел с правилами -->
-        <h2>Правила сервера</h2>
-        <p style="font-size: 1em; margin-bottom: 20px;">Незнание правил не освобождает от ответственности. Играйте честно!</p>
+        <!-- Раздел с правилами Анархии -->
+        <h2>Правила Анархии</h2>
+        <p style="font-size: 1em; margin-bottom: 20px;">Здесь выживает сильнейший. Помни основные законы мира:</p>
         
         <table class="rules-table">
             <thead>
                 <tr>
-                    <th>Правило</th>
+                    <th>Что делаем?</th>
                     <th>Описание</th>
-                    <th>Наказание</th>
+                    <th>Статус</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>1. Читы</strong></td>
-                    <td>Использование X-Ray, Fly, Киллауры и любого софта, дающего преимущество.</td>
-                    <td class="punishment">Бан навсегда</td>
+                    <td><strong>Гриферство и PvP</strong></td>
+                    <td>Взрывать базы, грабить сундуки, убивать игроков и забирать их ресурсы.</td>
+                    <td class="allowed">РАЗРЕШЕНО</td>
                 </tr>
                 <tr>
-                    <td><strong>2. Гриферство</strong></td>
-                    <td>Разрушение чужих построек, воровство ресурсов из приватов и заливание лавой.</td>
-                    <td class="punishment">Бан от 7 дней</td>
+                    <td><strong>Читы и Софт</strong></td>
+                    <td>Использование Киллауры, Флая, Иксрея и других сторонних чит-клиентов.</td>
+                    <td class="punishment">БАН НАВСЕГДА</td>
                 </tr>
                 <tr>
-                    <td><strong>3. Чат</strong></td>
-                    <td>Оскорбление игроков, жесткий мат, спам, капс и реклама сторонних проектов.</td>
-                    <td class="punishment">Мут от 30 мин</td>
+                    <td><strong>Дюпы и Баги</strong></td>
+                    <td>Использование багов сервера для клонирования предметов или краша экономики.</td>
+                    <td class="punishment">БАН / ОБНУЛЕНИЕ</td>
                 </tr>
                 <tr>
-                    <td><strong>4. Багоюз</strong></td>
-                    <td>Использование багов игры или сервера для дюпа предметов и личной выгоды.</td>
-                    <td class="punishment">Бан / Обнуление</td>
+                    <td><strong>Атаки на сервер</strong></td>
+                    <td>Постройка лаг-машин, попытки положить сервер или вызвать жесткие лаги.</td>
+                    <td class="punishment">БАН ПО IP</td>
                 </tr>
             </tbody>
         </table>
