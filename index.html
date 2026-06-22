@@ -1,1 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRANICWORLD | Minecraft Server</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding: 50px 20px;
+            margin: 0;
+        }
+        h1 {
+            color: #4caf50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #aaaaaa;
+            font-size: 1.2em;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .ip-box {
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-radius: 8px;
+            display: inline-block;
+            margin: 20px 0;
+            border: 2px solid #4caf50;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+        .status-box {
+            font-size: 1.2em;
+            margin-top: 15px;
+        }
+        .online { color: #4caf50; font-weight: bold; }
+        .offline { color: #f44336; font-weight: bold; }
+    </style>
+</head>
+<body>
 
+    <div class="container">
+        <h1>DRANICWORLD</h1>
+        <p>Добро пожаловать на наш сервер Minecraft!</p>
+        <p>Версия: <strong>1.21.11</strong></p>
+        
+        <div class="ip-box">
+            IP для подключения: <strong id="ip-text">144.124.196.94:25565</strong>
+        </div>
+
+        <div class="status-box">
+            Статус: <span id="status">Загрузка...</span><br>
+            Игроков онлайн: <span id="players">- / -</span>
+        </div>
+    </div>
+
+    <script>
+        const serverIP = '144.124.196.94:25565';
+
+        async function updateStatus() {
+            try {
+                const response = await fetch(`https://api.mcsrvstat.us/2/${serverIP}`);
+                const data = await response.json();
+                
+                if (data.online) {
+                    document.getElementById('status').innerHTML = '<span class="online">В сети ●</span>';
+                    document.getElementById('players').innerText = `${data.players.online} / ${data.players.max}`;
+                } else {
+                    document.getElementById('status').innerHTML = '<span class="offline">Выключен ○</span>';
+                    document.getElementById('players').innerText = '0 / 0';
+                }
+            } catch (error) {
+                console.error("Ошибка получения статуса:", error);
+                document.getElementById('status').innerText = "Ошибка обновления";
+            }
+        }
+
+        // Обновляем статус сервера сразу и каждые 30 секунд
+        updateStatus();
+        setInterval(updateStatus, 30000);
+    </script>
+</body>
+</html>
