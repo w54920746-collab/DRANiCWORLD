@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DRANICWORLD | Официальный Сайт</title>
+    
+    <link rel="icon" type="image/jpeg" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTroa4dMm6V2jDdDgmldgfsRPjG45ZUKs53Awjpoc6xbg&s=10">
+
     <style>
         :root {
             --primary: #00ff66;
@@ -159,7 +162,11 @@
         .p-zhitel { color: #55ff55; }
         .p-voin { color: #ff5555; }
         .p-old { color: #ffaa00; }
-        .p-legenda { color: #b512ff; text-shadow: 0 0 10px rgba(181, 18, 255, 0.4); }
+        
+        .p-legenda { 
+            color: #b512ff; 
+            text-shadow: 0 0 12px rgba(181, 18, 255, 0.6); 
+        }
 
         .rules-grid {
             display: table;
@@ -168,6 +175,7 @@
             border-spacing: 12px;
             text-align: left;
             margin-top: 15px;
+            margin-bottom: 40px;
         }
 
         .rule-box {
@@ -191,6 +199,29 @@
             color: #a0a0b8;
             font-size: 0.95em;
             line-height: 1.4;
+        }
+
+        .mods-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #0072ff 0%, #00bcff 100%);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 30px;
+            border-radius: 12px;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 188, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 20px;
+        }
+
+        .mods-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(0, 188, 255, 0.3);
+            filter: brightness(1.1);
         }
 
         .toast {
@@ -218,7 +249,7 @@
 
         <div class="ip-card" onclick="copyIP()">
             <div class="toast" id="clipToast">IP-АДРЕС СКОПИРОВАН!</div>
-            <span>Нажми, чтобы начать играть</span>
+            <span>Нажми, чтобы скопировать IP</span>
             <strong>144.124.196.94:25565</strong>
         </div>
 
@@ -245,7 +276,7 @@
                 <div class="prefix-cell cell-bonus">Цветной текст в чате</div>
             </div>
             <div class="prefix-row">
-                <div class="prefix-cell cell-rank p-legenda">[ЛЕГЕНДА]</div>
+                <div class="prefix-cell cell-rank p-legenda">👑 [ЛЕГЕНДА]</div>
                 <div class="prefix-cell cell-time">100 часов</div>
                 <div class="prefix-cell cell-bonus">Уникальный кит + префикс переливается</div>
             </div>
@@ -262,6 +293,10 @@
                 <p>Читы (софт), обход чужих приватов багами, дюпы предметов и попытки лагать сервер машинами.</p>
             </div>
         </div>
+
+        <a href="https://w54920746-collab.github.io/" target="_blank" class="mods-btn">
+            📦 Скачать моды с нашего сайта
+        </a>
     </div>
 
     <script>
